@@ -10,8 +10,6 @@ const validateLoginInput = require('../../validation/login');
 
 router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
 
-module.exports = router;
-
 router.post('/register', (req, res) => {
     const { errors, isValid } = validateRegisterInput(req.body);
   
@@ -73,3 +71,5 @@ router.post('/register', (req, res) => {
       email: req.user.email
     });
   })
+
+  module.exports = router;
