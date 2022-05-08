@@ -1,5 +1,6 @@
 import React from 'react';
 import TweetBox from './tweet_box';
+import './tweets.css'
 
 class TweetCompose extends React.Component {
   constructor(props) {
@@ -35,9 +36,9 @@ class TweetCompose extends React.Component {
 
   render() {
     return (
-        <div>
+        <div className='tweet-form-container'>
             <form onSubmit={this.handleSubmit}>
-                <div>
+                <div className='tweet-form'>
                     <input type="textarea"
                         value={this.state.text}
                         onChange={this.update()}

@@ -1,0 +1,31 @@
+.signup-form-container{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: aqua;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding: 1rem;
+    height: 85vh;
+}
+
+.signup-form{
+    border: 1px solid #999;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    background-color: aquamarine;   
+}
+
+.signup-form input{
+    margin: 0.5rem;
+    padding: 0.5rem;
+}
+
+.signup-form-container input[type=submit]{
+    border: 1px solid #999;
+    background-color: navy;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}

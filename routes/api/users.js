@@ -64,7 +64,6 @@ router.post("/register", (req, res) => {
     User.findOne({email})
       .then(user => {
         if (!user) {
-          // Use the validations to send the error
           errors.email = 'User not found';
           return res.status(404).json(errors);
         }
@@ -74,19 +73,19 @@ router.post("/register", (req, res) => {
             if (isMatch) {
               const payload = {id: user.id, handle: user.handle};
 
-      jwt.sign(
-        payload,
-        keys.secretOrKey,
-        // Tell the key to expire in one hour
-        {expiresIn: 3600},
-        (err, token) => {
-          res.json({
-            success: true,
-            token: 'Bearer ' + token
-          });
-        });
-            } else {
-              // And here:
+              jwt.sign(
+                payload,
+                keys.secretOrKey,
+                {expiresIn: 3600},
+                (err, token) => {
+                  res.json({
+                    success: true,
+                    token: 'Bearer ' + token
+                  });
+                }
+              );
+            } 
+            else {
               errors.password = 'Incorrect password'
               return res.status(400).json(errors);
             }

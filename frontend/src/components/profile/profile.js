@@ -1,5 +1,6 @@
 import React from 'react';
 import TweetBox from '../tweets/tweet_box';
+import './profile.css'
 
 class Profile extends React.Component {
     constructor(props) {
@@ -21,10 +22,10 @@ class Profile extends React.Component {
     
     render() {
         if (this.state.tweets.length === 0) {
-          return (<div>This user has no Tweets</div>)
+          return (<div className='user-profile'>This user has no Tweets</div>)
         } else {
           return (
-            <div>
+            <div className='user-profile'>
               <h2>All of This User's Tweets</h2>
               {this.state.tweets.map(tweet => (
                 <TweetBox key={tweet._id} text={tweet.text} />
